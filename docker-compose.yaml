@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  nats-server:
+    image: nats:latest
+    container_name: nats-server
+    ports:
+      - "4222:4222" # Основной порт для подключения клиентов
+      - "8222:8222" # Веб-интерфейс для мониторинга
+    environment:
+      - NATS_SERVER_NAME=nats-server
+      - NATS_MAX_CONNECTIONS=1000
