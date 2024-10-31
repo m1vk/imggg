@@ -1,0 +1,58 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.leftContainer {
+    display: flex;
+    align-items: center;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logo {
+    height: 32px;
+}
+
+.rightNav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.leftNav {
+    display: flex;
+    gap: 20px;
+}
+
+.navLink {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.loginButton {
+    background-color: #e60023;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.signupButton {
+    background-color: #e7e7e7;
+    color: #333;
+    padding: 8px 10px;
+    border-radius: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
