@@ -1,10 +1,10 @@
-import MainHeader from './header'
+import Header from '../components/Header'
 
 export default function Home() {
 
     return (
         <div>
-            <MainHeader />
+            <Header />
         </div>
     )
 

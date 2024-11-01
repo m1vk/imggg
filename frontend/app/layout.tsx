@@ -1,4 +1,5 @@
 import { Layout } from "antd";
+import '../styles/MainStyles.css'
 
 
 
