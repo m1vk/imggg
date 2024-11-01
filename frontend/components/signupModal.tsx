@@ -17,17 +17,7 @@ export default function SignUpModal({ isOpen, onClose, onSwitch }: ModalProps) {
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         setPassword('')
-        setEmail('')
-        setUsername('')
-        console.log(email)
-    }
 
-    return (
-        <div className={styles.overlay} onClick={onClose}>
-            <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-                <button className={styles.closeButton} onClick={onClose}>
-                    &times;
-                </button>
                 <h1>Welcome to img!</h1>
                 <form onSubmit={handleSubmit}>
                     <input type="text" placeholder="Username" name="username" value={username}
