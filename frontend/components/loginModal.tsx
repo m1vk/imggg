@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import styles from '../styles/Modal.module.css';
+import Image from "next/image";
+import GoogleIcon from "@/public/google-icon.png";
 
 interface ModalProps {
     isOpen: boolean;
@@ -34,6 +36,13 @@ export default function LoginModal({ isOpen, onClose, onSwitch }: ModalProps) {
                            onChange={(e) => setPassword(e.target.value)} required/>
                     <button type="submit" className={styles.submitButton}>Login</button>
                 </form>
+                <button className={styles.googleButton}>
+                    <Image src={GoogleIcon} alt="Google icon" width={20} height={20}/>
+                    Sign in with Google
+                </button>
+                <p> By continuing, you agree to Pinterest's Terms of Service and
+                    <br/>acknowledge you've read our Privacy Policy.
+                    <br/>Notice at collection .</p>
                 <button type="button" onClick={onSwitch} className={styles.altButton}>Don`t have an account?</button>
             </div>
         </div>

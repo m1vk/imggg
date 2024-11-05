@@ -1,12 +1,16 @@
 "use client";
 
-import styles from '../styles/MainHeader.module.css'
+import styles from '../styles/Header.module.css'
 import Link from "next/link";
 import React from "react";
 import LoginModal from "./loginModal";
 import SignupModal from "./signupModal";
+import Image from "next/image";
+import Logo from '../public/Logo.png'
+import { FloatButton } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
 
-export default function Header() {
+export default function UnAuthHeader() {
     const [isLoginModalOpen, setIsLoginModalOpen] = React.useState(false);
     const [isSignUpModalOpen, setIsSignUpModalOpen] = React.useState(false);
 
@@ -29,11 +33,10 @@ export default function Header() {
         <header className={styles.header}>
             <div className={styles.leftContainer}>
                 <div className={styles.logoContainer}>
-                    <img src='../assets/Logo.png' alt="Pinterest Logo" className={styles.logo}/>
+                    <Image src={Logo} alt="Logo" width={120} height={80}/>
                 </div>
                 <div className={styles.leftNav}>
-                    <Link href="/" className={styles.navLink}>Explore</Link>
-                    <Link href="/" className={styles.navLink}>About</Link>
+                    <button className={styles.roundButton}>+</button>
                 </div>
             </div>
 

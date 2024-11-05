@@ -1,10 +1,10 @@
-import Header from '../components/Header'
+import UnAuthHeader from '../components/UnAuthHeader'
 
 export default function Home() {
 
     return (
         <div>
-            <Header />
+            <UnAuthHeader />
         </div>
     )
 
