@@ -1,8 +1,17 @@
-import React from 'react';
+"use client"
+
+import React, { useState } from 'react';
 import styles from '../../styles/PostCreation.module.css';
 import Header from '../../components/MainHeader'
 
 export default function PostCreation() {
+
+    const [selectedValue, setSelectedValue] = useState('');
+
+    const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        setSelectedValue(e.target.value);
+    };
+
     return (
         <div className={styles.pageContainer}>
             <Header/>
@@ -32,8 +41,8 @@ export default function PostCreation() {
                     </div>
                     <div className={styles.inputGroup}>
                         <label htmlFor="board" className={styles.label}>Board</label>
-                        <select id="board" className={styles.selectField} defaultValue='default'>
-                            <option value="default" disabled selected>Select a board</option>
+                        <select id="board" className={styles.selectField} value={selectedValue} onChange={handleChange}>
+                            <option value="default">Select a board</option>
                         </select>
                     </div>
                     <div className={styles.inputGroup}>

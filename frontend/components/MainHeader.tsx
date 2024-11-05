@@ -1,14 +1,13 @@
 "use client";
 
 import styles from '../styles/Header.module.css'
-import Link from "next/link";
 import React from "react";
 import LoginModal from "./loginModal";
 import SignupModal from "./signupModal";
 import Image from "next/image";
 import Logo from '../public/Logo.png'
-import { FloatButton } from "antd";
-import { PlusOutlined } from "@ant-design/icons";
+import {Avatar} from "antd"
+import {BellOutlined, DownOutlined, MessageOutlined, UserOutlined} from "@ant-design/icons";
 
 export default function UnAuthHeader() {
     const [isLoginModalOpen, setIsLoginModalOpen] = React.useState(false);
@@ -40,11 +39,17 @@ export default function UnAuthHeader() {
                 </div>
             </div>
 
+            <div className={styles.searchContainer}>
+                <input type="text" placeholder="Search" className={styles.searchInput} />
+            </div>
+
             <nav className={styles.rightNav}>
-                <Link href='/' className={styles.loginButton} onClick={openLoginModal}>Log in</Link>
-                <Link href='/' className={styles.signupButton} onClick={openSignUpModal}>Sign up</Link>
+                <BellOutlined style={{fontSize: '23px'}}/>
+                <MessageOutlined style={{fontSize: '23px'}}/>
+                <Avatar><UserOutlined/></Avatar>
+                <DownOutlined/>
             </nav>
-            <LoginModal isOpen={isLoginModalOpen} onClose={closeModals} onSwitch={openSignUpModal} />
+            <LoginModal isOpen={isLoginModalOpen} onClose={closeModals} onSwitch={openSignUpModal}/>
             <SignupModal isOpen={isSignUpModalOpen} onClose={closeModals} onSwitch={openLoginModal}></SignupModal>
         </header>
     );
